@@ -1,176 +1,198 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sistema de Gestão de Vendas</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      padding: 20px;
-      min-height: 100vh;
-    }
-    .container {
-      max-width: 1400px;
-      margin: auto;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-    .header {
-      background: linear-gradient(135deg, #2d3748, #4a5568);
-      color: white;
-      padding: 30px;
-      text-align: center;
-    }
-    .header h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: bold; }
-    .header p { font-size: 1.2rem; opacity: 0.9; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Casa Pré-Fabricada Bahia</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    .module {
-      background: white;
-      border-radius: 15px;
-      margin: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-    .module-header {
-      padding: 25px 30px;
-      font-weight: bold;
-      color: white;
-      font-size: 1.3rem;
-    }
-    .module-content {
-      padding: 30px;
-      background: #f8fafc;
-    }
-    .vendas { background: linear-gradient(135deg, #4299e1, #3182ce); }
-    .custos { background: linear-gradient(135deg, #ed8936, #dd6b20); }
-    .despesas { background: linear-gradient(135deg, #e53e3e, #c53030); }
-    .entregas { background: linear-gradient(135deg, #38a169, #2f855a); }
-    .controle { background: linear-gradient(135deg, #805ad5, #6b46c1); }
-    .banco { background: linear-gradient(135deg, #1a202c, #2d3748); }
-    .relatorios { background: linear-gradient(135deg, #744210, #975a16); }
+    <style>
+        /* --- CONFIGURAÇÕES GERAIS E FUNDO --- */
+        :root {
+            --cor-amarelo: #FFC72C; /* Um amarelo mais vibrante */
+            --cor-laranja-inicio: #FFA500;
+            --cor-laranja-fim: #FFD700;
+            --cor-texto: #FFFFFF;
+            --cor-fundo-escuro: #121212;
+            --cor-texto-botao: #000000;
+        }
 
-    .flow-arrow {
-      text-align: center;
-      font-size: 2rem;
-      color: #4a5568;
-      animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .item {
-      margin-bottom: 15px;
-      background: #edf2f7;
-      padding: 15px;
-      border-left: 4px solid #4299e1;
-      border-radius: 8px;
-    }
-    .item h4 { color: #2d3748; margin-bottom: 5px; font-size: 1.1rem; }
-    .item p { font-size: 0.95rem; color: #4a5568; }
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--cor-fundo-escuro);
+            color: var(--cor-texto);
+            text-align: center;
+            /* IMAGEM DE FUNDO - Substitua pela sua imagem se desejar */
+            background-image: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.9)), url('https://images.pexels.com/photos/247597/pexels-photo-247597.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
 
-    @media (max-width: 768px) {
-      .header h1 { font-size: 2rem; }
-      .header p { font-size: 1rem; }
-      .module { margin: 15px; }
-      .module-content { padding: 20px; }
-    }
-  </style>
+        /* --- CONTAINER PRINCIPAL --- */
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- LOGO, TÍTULO E FRASE DE IMPACTO --- */
+        .logo {
+            width: 120px; /* Ajuste o tamanho do logo */
+            height: 120px;
+            margin-bottom: 15px;
+            border-radius: 8px; /* Borda arredondada para o logo */
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem; /* <<< AJUSTE AQUI: Título um pouco menor */
+            color: var(--cor-amarelo);
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        /* --- BOTÕES DE LINK --- */
+        .links {
+            width: 100%;
+            max-width: 400px; /* Limita a largura dos botões em telas grandes */
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif; /* <<< AJUSTE AQUI: Fonte aplicada a todos os botões */
+            font-weight: 700;
+            font-size: 1rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            width: 100%;
+        }
+
+        .btn i {
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+        
+        .btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Botão Principal (WhatsApp) */
+        .btn-primary {
+            background: linear-gradient(45deg, var(--cor-laranja-inicio), var(--cor-laranja-fim));
+            color: var(--cor-texto-botao);
+        }
+
+        /* Botões Secundários */
+        .btn-secondary {
+            background-color: var(--cor-amarelo);
+            color: var(--cor-texto-botao);
+        }
+
+        /* --- DIVISOR E REDES SOCIAIS --- */
+        .divider {
+            border: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            width: 80%;
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: var(--cor-texto);
+            font-size: 1.8rem;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--cor-amarelo);
+        }
+
+        /* --- RODAPÉ --- */
+        .footer {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 25px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>🏗️ Sistema de Gestão de Vendas de Kits</h1>
-      <p>Fluxo Completo: Venda → Custos → Despesas → Entrega</p>
+
+    <div class="container">
+
+       <img src="logo.png" alt="Logo Minha Casa Pré-Fabricada Bahia" class="logo">
+
+        <h1>Minha Casa Pré-Fabricada Bahia</h1>
+
+        <p class="tagline">O seu refúgio na natureza, do sonho à realidade.</p>
+        
+        <div class="links">
+            <a href="SEU_LINK_DO_WHATSAPP_AQUI" class="btn btn-primary" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                Falar no WhatsApp
+            </a>
+
+            <a href="SEU_LINK_DO_SHOWROOM_AQUI" class="btn btn-secondary" target="_blank">
+                <i class="fa-solid fa-house-chimney"></i>
+                Nosso Showroom
+            </a>
+            
+            <a href="SEU_LINK_DO_CATALOGO_AQUI" class="btn btn-secondary" target="_blank">
+                <i class="fa-solid fa-book-open"></i>
+                Catálogo de Casas
+            </a>
+            
+            <a href="SEU_LINK_DO_SITE_AQUI" class="btn btn-secondary" target="_blank">
+                <i class="fa-solid fa-globe"></i>
+                Site Oficial
+            </a>
+            
+            <a href="SEU_LINK_DO_FACEBOOK_AQUI" class="btn btn-secondary" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+                Facebook
+            </a>
+        </div>
+
+        <hr class="divider">
+
+        <div class="social-links">
+            <a href="SEU_LINK_DO_INSTAGRAM_AQUI" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="SEU_LINK_DO_FACEBOOK_AQUI" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+
+        <p class="footer">Construindo seu sonho com sustentabilidade. © 2025</p>
+
     </div>
 
-    <!-- Módulo 1: Vendas -->
-    <div class="module">
-      <div class="module-header vendas">💰 1. MÓDULO DE VENDAS</div>
-      <div class="module-content">
-        <div class="item"><h4>📝 Registro da Venda</h4><p>Dados: ID, cliente, kit, valor</p></div>
-        <div class="item"><h4>💳 Pagamentos</h4><p>Até 3 parcelas em 60 dias</p></div>
-        <div class="item"><h4>🏪 Formas de Pagamento</h4><p>Espécie, PIX, Cartão, Boleto</p></div>
-        <div class="item"><h4>⚡ Automatização</h4><p>Gatilho que gera custos e entrega</p></div>
-      </div>
-    </div>
-
-    <div class="flow-arrow">⬇️</div>
-
-    <!-- Módulo 2: Custos -->
-    <div class="module">
-      <div class="module-header custos">🏭 2. MÓDULO DE CUSTOS</div>
-      <div class="module-content">
-        <div class="item"><h4>MCPF</h4><p>Pagamentos parciais até quitação</p></div>
-        <div class="item"><h4>Madeireira</h4><p>Separado da MCPF, status individual</p></div>
-        <div class="item"><h4>Rastreamento Consolidado</h4><p>Finaliza quando ambos pagos</p></div>
-      </div>
-    </div>
-
-    <div class="flow-arrow">⬇️</div>
-
-    <!-- Módulo 3: Despesas -->
-    <div class="module">
-      <div class="module-header despesas">📋 3. MÓDULO DE DESPESAS</div>
-      <div class="module-content">
-        <div class="item"><h4>ROI, Propaganda, Comissão</h4><p>Pagos em até 2 parcelas</p></div>
-        <div class="item"><h4>ICMS, Simples, ADM</h4><p>Baseado em valor da venda/compra</p></div>
-      </div>
-    </div>
-
-    <div class="flow-arrow">⬇️</div>
-
-    <!-- Módulo 4: Entregas -->
-    <div class="module">
-      <div class="module-header entregas">🚛 4. MÓDULO DE ENTREGAS</div>
-      <div class="module-content">
-        <div class="item"><h4>Prazo Máximo</h4><p>60 dias</p></div>
-        <div class="item"><h4>Gestão do Frete</h4><p>Responsabilidade do cliente</p></div>
-        <div class="item"><h4>Rastreamento</h4><p>Status do kit</p></div>
-      </div>
-    </div>
-
-    <div class="flow-arrow">⬇️</div>
-
-    <!-- Módulo 5: Controle Financeiro -->
-    <div class="module">
-      <div class="module-header controle">💳 5. CONTROLE FINANCEIRO</div>
-      <div class="module-content">
-        <div class="item"><h4>Receitas e Despesas</h4><p>A receber e a pagar</p></div>
-        <div class="item"><h4>Custos</h4><p>Controle MCPF e Madeireira</p></div>
-        <div class="item"><h4>Alertas</h4><p>Vencimentos e atrasos</p></div>
-      </div>
-    </div>
-
-    <div class="flow-arrow">⬇️</div>
-
-    <!-- Módulo 6: Banco/Caixa -->
-    <div class="module">
-      <div class="module-header banco">🏦 6. BANCO E CAIXA</div>
-      <div class="module-content">
-        <div class="item"><h4>Caixa Físico e Conta</h4><p>Movimentações e saldos</p></div>
-        <div class="item"><h4>Cartões e Pix</h4><p>D+1, D+30</p></div>
-        <div class="item"><h4>Contas a Pagar/Receber</h4><p>Prioridade por vencimento</p></div>
-      </div>
-    </div>
-
-    <div class="flow-arrow">⬇️</div>
-
-    <!-- Módulo 7: Relatórios -->
-    <div class="module">
-      <div class="module-header relatorios">📊 7. RELATÓRIOS</div>
-      <div class="module-content">
-        <div class="item"><h4>Dashboard</h4><p>Visão geral do sistema</p></div>
-        <div class="item"><h4>DRE e Projeções</h4><p>Receita - Custo - Despesas</p></div>
-        <div class="item"><h4>Rastreamento</h4><p>Status por cliente</p></div>
-      </div>
-    </div>
-  </div>
 </body>
+
 </html>
