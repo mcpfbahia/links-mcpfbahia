@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Casa Pré-Fabricada Bahia</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* --- CONFIGURAÇÕES GERAIS E FUNDO --- */
+        :root {
+            --cor-amarelo: #FFC72C; /* Um amarelo mais vibrante */
+            --cor-laranja-inicio: #FFA500;
+            --cor-laranja-fim: #FFD700;
+            --cor-texto: #FFFFFF;
+            --cor-fundo-escuro: #121212;
+            --cor-texto-botao: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--cor-fundo-escuro);
+            color: var(--cor-texto);
+            text-align: center;
+            /* IMAGEM DE FUNDO - Substitua pela sua imagem se desejar */
+            background-image: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.9)), url('https://images.pexels.com/photos/247597/pexels-photo-247597.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* --- CONTAINER PRINCIPAL --- */
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- LOGO, TÍTULO E FRASE DE IMPACTO --- */
+        .logo {
+            width: 120px; /* Ajuste o tamanho do logo */
+            height: 120px;
+            margin-bottom: 15px;
+            border-radius: 8px; /* Borda arredondada para o logo */
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem; /* <<< AJUSTE AQUI: Título um pouco menor */
+            color: var(--cor-amarelo);
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        /* --- BOTÕES DE LINK --- */
+        .links {
+            width: 100%;
+            max-width: 400px; /* Limita a largura dos botões em telas grandes */
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif; /* <<< AJUSTE AQUI: Fonte aplicada a todos os botões */
+            font-weight: 700;
+            font-size: 1rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            width: 100%;
+        }
+
+        .btn i {
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+        
+        .btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Botão Principal (WhatsApp) */
+        .btn-primary {
+            background: linear-gradient(45deg, var(--cor-laranja-inicio), var(--cor-laranja-fim));
+            color: var(--cor-texto-botao);
+        }
+
+        /* Botões Secundários */
+        .btn-secondary {
+            background-color: var(--cor-amarelo);
+            color: var(--cor-texto-botao);
+        }
+
+        /* --- DIVISOR E REDES SOCIAIS --- */
+        .divider {
+            border: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            width: 80%;
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: var(--cor-texto);
+            font-size: 1.8rem;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--cor-amarelo);
+        }
+
+        /* --- RODAPÉ --- */
+        .footer {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+       <img src="d:/logo.png" alt="Logo Minha Casa Pré-Fabricada Bahia" class="logo">
+
+        <h1>Minha Casa Pré-Fabricada Bahia</h1>
+
+        <p class="tagline">O seu refúgio na natureza, do sonho à realidade.</p>
+        
+        <div class="links">
+            <a href="SEU_LINK_DO_WHATSAPP_AQUI" class="btn btn-primary" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                Falar no WhatsApp
+            </a>
+
+            <a href="SEU_LINK_DO_SHOWROOM_AQUI" class="btn btn-secondary" target="_blank">
+                <i class="fa-solid fa-house-chimney"></i>
+                Nosso Showroom
+            </a>
+            
+            <a href="SEU_LINK_DO_CATALOGO_AQUI" class="btn btn-secondary" target="_blank">
+                <i class="fa-solid fa-book-open"></i>
+                Catálogo de Casas
+            </a>
+            
+            <a href="SEU_LINK_DO_SITE_AQUI" class="btn btn-secondary" target="_blank">
+                <i class="fa-solid fa-globe"></i>
+                Site Oficial
+            </a>
+            
+            <a href="SEU_LINK_DO_FACEBOOK_AQUI" class="btn btn-secondary" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+                Facebook
+            </a>
+        </div>
+
+        <hr class="divider">
+
+        <div class="social-links">
+            <a href="SEU_LINK_DO_INSTAGRAM_AQUI" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="SEU_LINK_DO_FACEBOOK_AQUI" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+
+        <p class="footer">Construindo seu sonho com sustentabilidade. © 2025</p>
+
+    </div>
+
+</body>
+</html>
