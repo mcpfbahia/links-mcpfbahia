@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Gestão de Vendas</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1400px;
+      margin: auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #2d3748, #4a5568);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    .header h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: bold; }
+    .header p { font-size: 1.2rem; opacity: 0.9; }
+
+    .module {
+      background: white;
+      border-radius: 15px;
+      margin: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .module-header {
+      padding: 25px 30px;
+      font-weight: bold;
+      color: white;
+      font-size: 1.3rem;
+    }
+    .module-content {
+      padding: 30px;
+      background: #f8fafc;
+    }
+    .vendas { background: linear-gradient(135deg, #4299e1, #3182ce); }
+    .custos { background: linear-gradient(135deg, #ed8936, #dd6b20); }
+    .despesas { background: linear-gradient(135deg, #e53e3e, #c53030); }
+    .entregas { background: linear-gradient(135deg, #38a169, #2f855a); }
+    .controle { background: linear-gradient(135deg, #805ad5, #6b46c1); }
+    .banco { background: linear-gradient(135deg, #1a202c, #2d3748); }
+    .relatorios { background: linear-gradient(135deg, #744210, #975a16); }
+
+    .flow-arrow {
+      text-align: center;
+      font-size: 2rem;
+      color: #4a5568;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .item {
+      margin-bottom: 15px;
+      background: #edf2f7;
+      padding: 15px;
+      border-left: 4px solid #4299e1;
+      border-radius: 8px;
+    }
+    .item h4 { color: #2d3748; margin-bottom: 5px; font-size: 1.1rem; }
+    .item p { font-size: 0.95rem; color: #4a5568; }
+
+    @media (max-width: 768px) {
+      .header h1 { font-size: 2rem; }
+      .header p { font-size: 1rem; }
+      .module { margin: 15px; }
+      .module-content { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🏗️ Sistema de Gestão de Vendas de Kits</h1>
+      <p>Fluxo Completo: Venda → Custos → Despesas → Entrega</p>
+    </div>
+
+    <!-- Módulo 1: Vendas -->
+    <div class="module">
+      <div class="module-header vendas">💰 1. MÓDULO DE VENDAS</div>
+      <div class="module-content">
+        <div class="item"><h4>📝 Registro da Venda</h4><p>Dados: ID, cliente, kit, valor</p></div>
+        <div class="item"><h4>💳 Pagamentos</h4><p>Até 3 parcelas em 60 dias</p></div>
+        <div class="item"><h4>🏪 Formas de Pagamento</h4><p>Espécie, PIX, Cartão, Boleto</p></div>
+        <div class="item"><h4>⚡ Automatização</h4><p>Gatilho que gera custos e entrega</p></div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">⬇️</div>
+
+    <!-- Módulo 2: Custos -->
+    <div class="module">
+      <div class="module-header custos">🏭 2. MÓDULO DE CUSTOS</div>
+      <div class="module-content">
+        <div class="item"><h4>MCPF</h4><p>Pagamentos parciais até quitação</p></div>
+        <div class="item"><h4>Madeireira</h4><p>Separado da MCPF, status individual</p></div>
+        <div class="item"><h4>Rastreamento Consolidado</h4><p>Finaliza quando ambos pagos</p></div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">⬇️</div>
+
+    <!-- Módulo 3: Despesas -->
+    <div class="module">
+      <div class="module-header despesas">📋 3. MÓDULO DE DESPESAS</div>
+      <div class="module-content">
+        <div class="item"><h4>ROI, Propaganda, Comissão</h4><p>Pagos em até 2 parcelas</p></div>
+        <div class="item"><h4>ICMS, Simples, ADM</h4><p>Baseado em valor da venda/compra</p></div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">⬇️</div>
+
+    <!-- Módulo 4: Entregas -->
+    <div class="module">
+      <div class="module-header entregas">🚛 4. MÓDULO DE ENTREGAS</div>
+      <div class="module-content">
+        <div class="item"><h4>Prazo Máximo</h4><p>60 dias</p></div>
+        <div class="item"><h4>Gestão do Frete</h4><p>Responsabilidade do cliente</p></div>
+        <div class="item"><h4>Rastreamento</h4><p>Status do kit</p></div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">⬇️</div>
+
+    <!-- Módulo 5: Controle Financeiro -->
+    <div class="module">
+      <div class="module-header controle">💳 5. CONTROLE FINANCEIRO</div>
+      <div class="module-content">
+        <div class="item"><h4>Receitas e Despesas</h4><p>A receber e a pagar</p></div>
+        <div class="item"><h4>Custos</h4><p>Controle MCPF e Madeireira</p></div>
+        <div class="item"><h4>Alertas</h4><p>Vencimentos e atrasos</p></div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">⬇️</div>
+
+    <!-- Módulo 6: Banco/Caixa -->
+    <div class="module">
+      <div class="module-header banco">🏦 6. BANCO E CAIXA</div>
+      <div class="module-content">
+        <div class="item"><h4>Caixa Físico e Conta</h4><p>Movimentações e saldos</p></div>
+        <div class="item"><h4>Cartões e Pix</h4><p>D+1, D+30</p></div>
+        <div class="item"><h4>Contas a Pagar/Receber</h4><p>Prioridade por vencimento</p></div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">⬇️</div>
+
+    <!-- Módulo 7: Relatórios -->
+    <div class="module">
+      <div class="module-header relatorios">📊 7. RELATÓRIOS</div>
+      <div class="module-content">
+        <div class="item"><h4>Dashboard</h4><p>Visão geral do sistema</p></div>
+        <div class="item"><h4>DRE e Projeções</h4><p>Receita - Custo - Despesas</p></div>
+        <div class="item"><h4>Rastreamento</h4><p>Status por cliente</p></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
